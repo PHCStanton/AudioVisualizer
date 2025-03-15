@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Audio Visualizer</h1>
+
+    <div id="upload-section">
+        <input type="file" id="mp3-uploader" accept=".mp3">
+        <audio id="audio-player" controls></audio>
+        <button id="stop-mp3">Stop MP3</button>
+        <button id="clear-mp3">Clear MP3</button>
+    </div>
+
+    <div id="tone-generator-section">
+        <label for="frequency">Frequency (Hz):</label>
+        <input type="number" id="frequency" value="440">
+
+        <p>Waveform:</p>
+        <input type="radio" id="sine" name="waveform" value="sine" checked>
+        <label for="sine">Sine</label>
+
+        <input type="radio" id="square" name="waveform" value="square">
+        <label for="square">Square</label>
+
+        <input type="radio" id="triangle" name="waveform" value="triangle">
+        <label for="triangle">Triangle</label>
+
+        <input type="radio" id="sawtooth" name="waveform" value="sawtooth">
+        <label for="sawtooth">Sawtooth</label>
+
+        <p>Noise Type:</p>
+        <input type="radio" id="none" name="noiseType" value="none" checked>
+        <label for="none">None</label>
+
+        <input type="radio" id="white" name="noiseType" value="white">
+        <label for="white">White Noise</label>
+
+        <input type="radio" id="pink" name="noiseType" value="pink">
+        <label for="pink">Pink Noise</label>
+
+        <label for="visualizer">Visualizer:</label>
+        <select id="visualizer">
+            <option value="bar">Bar Graph</option>
+            <option value="kaleidoscope">Kaleidoscope</option>
+            <option value="kaleidoscope-b">Kaleidoscope B</option>
+        </select>
+
+        <button id="play-tone">Play Tone</button>
+        <button id="stop-tone">Stop Tone</button>
+
+        <label for="bar-color">Bar Color:</label>
+        <input type="color" id="bar-color" value="#ff3232">
+    </div>
+
+    <canvas id="visualizer-canvas" width="800" height="256"></canvas>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
